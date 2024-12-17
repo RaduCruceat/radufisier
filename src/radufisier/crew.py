@@ -1,5 +1,17 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
+from src.radufisier.FoodTrackingCrew import FoodTrackingCrew
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+edamam_app_id = os.getenv('EDAMAM_APP_ID')
+edamam_api_key = os.getenv('EDAMAM_API_KEY')
+
+app = FoodTrackingCrew(edamam_app_id, edamam_api_key)
+food_list = ["1 apple", "1 slice bread", "10 g butter"]
+results = app.track_multiple_food_items(food_list)
+print(results)
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
