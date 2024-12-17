@@ -1,0 +1,24 @@
+calorie_calculation_task:
+  description: >
+    Calculate the total calories for all the given foods based on their nutritional values.
+    Ensure to provide a correct breakdown for each item. Use reliable nutritional sources.
+    Ensure your calculations are precise and provide a breakdown if needed.
+    Food:(1 apple, 100g of nuts , 1 watermelon)
+  error_handling: >
+    Retry only once with adjusted logic. Provide the best possible output, even if data is incomplete.
+  expected_output: >
+    The total calorie count for all items, with an optional breakdown per item.
+  agent: calorie_calculator
+ 
+
+
+protein_analysis_task:
+  description: >
+    Analyze the listed foods and determine which one has the highest protein content, even if none are high-protein items.
+    Always name one item.
+    Food:(1 apple, 100g of nuts , 1 watermelon)
+  error_handling: >
+    Retry only once with adjusted logic. Provide the best possible output, even if data is incomplete.
+  expected_output: >
+    The name of the item with the highest protein content and its corresponding value.
+  agent: protein_analyzer
