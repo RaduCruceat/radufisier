@@ -1,9 +1,19 @@
+foods_analyser_task:
+  description: >
+    Display all the given foods based and their nutritional values that are already provided.
+    Ensure your displaying are precise and provide a breakdown if needed.
+  error_handling: >
+    Retry only once with adjusted logic. Provide the best possible output, even if data is incomplete.
+  expected_output: >
+    All the food items in the list with their prorieties
+  agent: foods_analyser
+
+
 calorie_calculation_task:
   description: >
     Calculate the total calories for all the given foods based on their nutritional values.
-    Ensure to provide a correct breakdown for each item. Use reliable nutritional sources.
+    The calories are already given, u just got to make the sum of the item's calories.
     Ensure your calculations are precise and provide a breakdown if needed.
-    Food:(1 apple, 100g of nuts , 1 watermelon)
   error_handling: >
     Retry only once with adjusted logic. Provide the best possible output, even if data is incomplete.
   expected_output: >
@@ -15,8 +25,8 @@ calorie_calculation_task:
 protein_analysis_task:
   description: >
     Analyze the listed foods and determine which one has the highest protein content, even if none are high-protein items.
+    The protein values are already given, u just got to say which food has the most protein.
     Always name one item.
-    Food:(1 apple, 100g of nuts , 1 watermelon)
   error_handling: >
     Retry only once with adjusted logic. Provide the best possible output, even if data is incomplete.
   expected_output: >
