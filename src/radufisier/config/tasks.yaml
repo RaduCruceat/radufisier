@@ -1,34 +1,38 @@
 foods_analyser_task:
   description: >
-    Display all the given foods based and their nutritional values that are already provided.
-    Ensure your displaying are precise and provide a breakdown if needed.
-  error_handling: >
-    Retry only once with adjusted logic. Provide the best possible output, even if data is incomplete.
+    You will **always** use the File Read Tool to retrive the foods and their asociated information. 
+    The file which contains the foods is located in {file_path}.
+    Do not create information unrelated to the file.
+    Display all the given items that are already provided using the File Read Tool, don't create your own input.
+    You will have multiple item objects.
+    Ensure your displaying are precise just like in the provided file.
   expected_output: >
-    All the food items in the list with their prorieties
+    All the foods in the JSON file with their proprieties.
   agent: foods_analyser
 
 
 calorie_calculation_task:
   description: >
-    Calculate the total calories for all the given foods based on their nutritional values.
-    The calories are already given, u just got to make the sum of the item's calories.
-    Ensure your calculations are precise and provide a breakdown if needed.
-  error_handling: >
-    Retry only once with adjusted logic. Provide the best possible output, even if data is incomplete.
+    You will **always** use the File Read Tool to retrive the foods and their asociated information. 
+    The file which contains the foods is located in {file_path}.
+    Do not create information unrelated to the file.
+    Extract all of the values of the propriety "calories" of each item and then return the value of the sum of all of the values.
+    The calories are already provided by the agent using the File Read Tool, don't create your own input.
+    Ensure your calculations are precise.
   expected_output: >
-    The total calorie count for all items, with an optional breakdown per item.
+    The total calorie count for all the foods in the provided file and also each item with its coresponding number of calories.
   agent: calorie_calculator
  
 
 
 protein_analysis_task:
   description: >
-    Analyze the listed foods and determine which one has the highest protein content, even if none are high-protein items.
-    The protein values are already given, u just got to say which food has the most protein.
+    You will **always** use the File Read Tool to retrive the foods and their asociated information. 
+    The file which contains the foods is located in {file_path}.
+    Do not create information unrelated to the file.
+    Extract all of the values of the propriety "protein_g" of each item and then return the highest value out of all of the values.
+    The protein is already provided by the agent using the File Read Tool, don't create your own input.
     Always name one item.
-  error_handling: >
-    Retry only once with adjusted logic. Provide the best possible output, even if data is incomplete.
   expected_output: >
-    The name of the item with the highest protein content and its corresponding value.
+    The name of the food with the highest protein content in the provided file and its corresponding protein value.
   agent: protein_analyzer

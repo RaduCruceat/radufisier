@@ -16,7 +16,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs'
+        'file_path': "C:/Users/Radu/radufisier/FoodList.json"
     }
     Radufisier().crew().kickoff(inputs=inputs)
 

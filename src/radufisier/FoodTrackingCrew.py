@@ -35,10 +35,10 @@ class FoodTrackingCrew:
         # Log the food item and its nutritional content
         item_info = {
             'item': food_item,
-            'calories': calories,
-            'protein_g': protein,
-            'fat_g': fat,
-            'sugar_g': sugar
+            'calories': round(calories),
+            'protein_g': round(protein, 2),
+            'fat_g': round(fat, 2),
+            'sugar_g': round(sugar, 2)
         }
         self.food_log['items'].append(item_info)
         self.food_log['total_calories'] += calories
@@ -65,30 +65,8 @@ class FoodTrackingCrew:
                 results.append(result)
             except Exception as e:
                 results.append({
-                    'food_item': food_item,
+                    'item': food_item,
                     'error': str(e)
                 })
         return results
-
-def main(food_items):
-    """
-    Main function to create an instance of FoodTrackingCrew
-    and process the given list of food items.
-    
-    Args:
-    - food_items (list of str): List of food items to track.
-    """
-    # Replace with your actual API credentials
-    EDAMAM_APP_ID = '5c178979'
-    EDAMAM_API_KEY = 'd8736c50a43b436d6214f15c3f913bb7'
-
-    # Create the food tracking application
-    app = FoodTrackingCrew(EDAMAM_APP_ID, EDAMAM_API_KEY)
-
-    # Track the list of food items
-    results = app.track_multiple_food_items(food_items)
-
-    # Print the results
-    for res in results:
-        print(res)
 

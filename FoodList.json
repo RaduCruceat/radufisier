@@ -1,0 +1,16 @@
+[
+    {
+        "item": "100g of rice",
+        "calories": 360,
+        "protein_g": 6.61,
+        "fat_g": 0.58,
+        "sugar_g": 0
+    },
+    {
+        "item": "100g of chocolate",
+        "calories": 480,
+        "protein_g": 4.2,
+        "fat_g": 30.0,
+        "sugar_g": 54.5
+    }
+]
